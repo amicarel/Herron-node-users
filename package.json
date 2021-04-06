@@ -1,0 +1,36 @@
+{
+  "name": "user-auth-server",
+  "version": "1.0.0",
+  "description": "tutorial Node",
+  "main": "user-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env DEBUG=users:* PORT=3333 SEQUELIZE_CONNECT=sequelize-sqlite.yaml node  --experimental-modules ./user-server.mjs",
+    "startMy": "cross-env DEBUG=users:* PORT=3333 SEQUELIZE_CONNECT=sequelize-mysql.yaml node  --experimental-modules ./user-server.mjs",
+    "add": "cross-env PORT=3333 node users-add.js",
+    "find": "cross-env PORT=3333 node users-find.js io",
+    "list": "cross-env PORT=3333 node users-list.js",
+    "docker": "node --experimental-modules ./user-server.mjs",
+    "docker-build": "docker build -t node-web-development/userauth ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "y"
+  },
+  "author": "Ego",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "fs-extra": "^9.0.1",
+    "js-yaml": "^3.14.0",
+    "mysql2": "^2.2.5",
+    "restify": "^8.5.1",
+    "restify-clients": "^2.6.9",
+    "sequelize": "^5.21.13",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^7.18.0"
+  }
+}
